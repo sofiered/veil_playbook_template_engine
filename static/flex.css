@@ -53,6 +53,9 @@ div.states-improvement-section-column{
     display: flex;
     flex-direction: column;
 }
+div.improvement-first p{
+    margin-bottom: 0;
+}
 div.states-improvement-section-column div.item{
     display: flex;
     flex-direction: row;
