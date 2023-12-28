@@ -122,3 +122,36 @@ div.harm-section div.harm-line-description{
 div.harm-line-description-justify{
     flex: 1;
 }
+
+@media print {
+    div.printer-page-break {
+        clear: both;
+        page-break-after: always;
+    }
+}
+
+div.moves div.second-page-move div.move-title {
+    color: #d22027;
+    text-transform: uppercase;
+    border-bottom: 2px solid #d22027;
+    font-weight: bold;
+    font-size: 120%;
+}
+div.options-move-single-option {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+div.single-option-marker {
+    border: 1px solid black;
+    aspect-ratio: 1/1;
+    height:7px;
+    margin: 0 5px;
+}
+ul.move-multielement-list{
+    margin:0;
+}
+div.move-multielement-fillable-line{
+    border-bottom: 1px dotted black;
+    min-height: 1.5em;
+}

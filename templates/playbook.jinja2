@@ -38,9 +38,8 @@
         </div>
 
 {%  endblock %}
-
 {% block second_page %}
-<div class="moves"> Вторая страница</div>
-<div class="moves"> Вторая страница</div>
-<div class="moves"> Вторая страница</div>
+<div class="moves"> {{ second_page_column(second_page['left']) }}</div>
+<div class="moves"> {{ second_page_column(second_page['middle']) }}</div>
+<div class="moves"> {{ second_page_column(second_page['right']) }}</div>
 {%  endblock %}

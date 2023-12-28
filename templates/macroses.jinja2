@@ -119,3 +119,49 @@
     {% endfor %}
 </div>
 {% endmacro %}
+
+{% macro second_page_column(column_data) %}
+    {% for single_move in column_data %}
+        {% if single_move['type'] == 'options' %}
+            {{ render_options_move(single_move) }}
+        {% elif single_move['type'] == 'multielement' %}
+            {{ render_multielement_move(single_move) }}
+        {% else %}
+            <p>#ERROR#</p>
+        {% endif %}
+    {% endfor %}
+{% endmacro %}
+
+{% macro render_options_move(move_data) %}
+    <div class="second-page-move options-move">
+        <div class="move-title"> {{ move_data['title'] }}</div>
+        <div class="options-move-description">{{ move_data['text'] }}</div>
+        {% for single_option in move_data['options'] %}
+            <div class="options-move-single-option">
+                <div class="single-option-marker"> </div>
+                <div class="single-option-description">{{ single_option }}</div>
+            </div>
+        {% endfor %}
+    </div>
+{% endmacro %}
+
+{% macro render_multielement_move(move_data) %}
+    <div class="second-page-move options-move">
+        <div class="move-title"> {{ move_data['title'] }}</div>
+        {% for element in move_data['elements'] %}
+            {% if element['type'] == 'text' %}
+                <div class="move-multielement-text"> {{ element['value'] }}</div>
+            {% elif element['type'] == 'list' %}
+                <ul class="move-multielement-list">
+                    {% for list_item in element['value'] %}
+                        <li>{{ list_item }}</li>
+                    {% endfor %}
+                </ul>
+            {% elif element['type'] == 'fillable' %}
+                {% for fillable_line in element['value'] %}
+                    <div class="move-multielement-fillable-line">{{ fillable_line }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endmacro %}

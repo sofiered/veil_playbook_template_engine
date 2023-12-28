@@ -1,5 +1,5 @@
 {% from "macroses.jinja2" import maybe_multiline, playbook_style, render_states, improve_stats, improve_base, improve_after_5 %}
-{% from "macroses.jinja2" import render_first_page_left_columns_blocks, render_harm %}
+{% from "macroses.jinja2" import render_first_page_left_columns_blocks, render_harm, second_page_column %}
 <html>
 <head>
     <title>{{ name }}</title>
@@ -12,6 +12,7 @@
     <div class="page">
         {% block first_page %} {% endblock %}
     </div>
+    <div class="printer-page-break"></div>
     <div class="page">
         {% block second_page %} {% endblock %}
     </div>
