@@ -34,6 +34,22 @@ div.description span {
     font-weight: bold;
     text-transform: uppercase;
 }
+div.look ul {
+    margin: 0;
+}
+div.look li div {
+    display: flex;
+    flex-direction: row;
+}
+div.look li div p{
+    margin: 0;
+}
+div.look li div p.look-type{
+    width:80px;
+}
+div.look li div p.look-value{
+    flex: 1;
+}
 div.multiline p {
     margin: 0;
 }

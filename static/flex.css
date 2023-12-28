@@ -25,6 +25,9 @@ div.improvement-title-section{
     flex-direction: row;
     align-items: center;
 }
+div.improvement-title-section h2.subtitle {
+    margin-top: 5px;
+}
 div.marks-container {
     flex: 1;
 }
