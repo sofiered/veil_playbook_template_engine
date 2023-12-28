@@ -15,7 +15,26 @@
             <h2 class="subtitle">{{ states_attr }}</h2>
             {{ render_states(states) }}
             <p>{{ maybe_multiline(states_description) }}</p>
+            <h2 class="subtitle"> {{ beliefs_attr }}</h2>
+            <p>{{ maybe_multiline(beliefs) }}</p>
+            {% for index in range(3) %}
+                <p class="belief-description"> {{ index +1 }}.</p>
+            {% endfor %}
+            <div class="improvement-title-section">
+                <h2 class="subtitle"> {{ improvement_attr }}</h2>
+                <h2 class="subtitle flex-title"> {{ xp_attr }}</h2>
+                    {% for index in range(5) %}
+                        <div class="xp-mark"></div>
+                    {% endfor %}
+            </div>
+            <div class="improvement-first">
+                {{  improve_stats(states) }}
+                {{ improve_base(base_improvements) }}
+                <p>{{ improvement_separator }}</p>
+                {{ improve_after_5(improvements_after_5) }}
+            </div>
         </div>
+
 {%  endblock %}
 
 {% block second_page %}

@@ -40,3 +40,40 @@
 
     </div>
 {% endmacro %}
+
+{% macro improve_stats(states_data) %}
+    <div class="states-improvement-section">
+        {% for key, value in states_data.items() %}
+            <div class="item">
+                <div class="improvement-mark"></div>
+                <p>+1 {{ value }}</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endmacro %}
+
+{% macro improve_base(improvements_dict) %}
+    <div class="states-improvement-section-column">
+        {% for key, value in improvements_dict.items() %}
+            <div class="item">
+                <p> {{ key }}</p>
+                {% for _ in range(value) %}
+                    <div class="improvement-mark"></div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+{% endmacro %}
+
+{% macro improve_after_5(improvements_dict) %}
+    <div class="states-improvement-after-5-section">
+        {% for key, value in improvements_dict.items() %}
+            <div class="item">
+                <p> {{ key }}</p>
+                {% for _ in range(value) %}
+                    <div class="improvement-mark"></div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+{% endmacro %}

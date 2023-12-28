@@ -35,3 +35,18 @@ div.description span {
 div.multiline p {
     margin: 0;
 }
+p.belief-description {
+    border-bottom: 2px dotted black;
+}
+h2.flex-title{
+    flex: 1;
+}
+
+div.xp-mark{
+    border: 2px solid #d22027;
+    aspect-ratio: 1/1;
+    height: 5%;
+    width: 5%;
+    margin: auto 0.5%;
+}
+

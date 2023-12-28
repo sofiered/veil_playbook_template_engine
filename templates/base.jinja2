@@ -1,20 +1,19 @@
-{% from "macroses.jinja2" import maybe_multiline, playbook_style, render_states %}
-
+{% from "macroses.jinja2" import maybe_multiline, playbook_style, render_states, improve_stats, improve_base, improve_after_5 %}
 <html>
 <head>
     <title>{{ name }}</title>
-    <link href="{{ url_for('static', path='/page.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', path='/flex.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', path='/states.css') }}" rel="stylesheet">
 </head>
-    <body>
-        <div class="main">
-            <div class="page">
-                {% block first_page %} {% endblock %}
-            </div>
-            <div class="page">
-                {% block second_page %} {%  endblock %}
-            </div>
-        </div>
-    </body>
+<body>
+<div class="main">
+    <div class="page">
+        {% block first_page %} {% endblock %}
+    </div>
+    <div class="page">
+        {% block second_page %} {% endblock %}
+    </div>
+</div>
+</body>
 </html>
