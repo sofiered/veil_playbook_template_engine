@@ -1,0 +1,34 @@
+div.states-container {
+    display: flex;
+    flex-direction: row;
+}
+div.states-container h3 {
+    text-transform: uppercase;
+    margin: 0 auto;
+    font-size: 100%;
+    color: #d22027;
+}
+div.one-stat {
+    width: 16.66%;
+    display: flex;
+    flex-direction: column;
+}
+
+div.stat-value {
+    border: 3px solid black;
+    aspect-ratio: 1/1;
+    margin: 5%;
+}
+div.stat-peak-counter-container{
+    display: flex;
+    flex-direction: row;
+    height: 15%;
+    width: 100%;
+    margin-left: 3%;
+}
+div.stat-peak {
+    border: 3px solid black;
+    width: 10%;
+    aspect-ratio: 1/1;
+    margin: 2.5%;
+}

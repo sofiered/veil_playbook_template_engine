@@ -1,0 +1,42 @@
+{% macro maybe_multiline(text) %}
+{% if text is string %}
+    <p>{{ text }}</p>
+{% elif text is iterable and (text is not string and text is not mapping) %}
+    <div class="multiline">
+        {% for line in text %}
+            <p>{{  line }}</p>
+        {% endfor %}
+    </div>
+{% else %}
+    <p>#ERROR#</p>
+{% endif %}
+{% endmacro %}
+
+{% macro playbook_style(look_items) %}
+<div class="look">
+    <ul>
+    {% for key, value in look_items.items() %}
+        <li><span>{{ key }} :</span> {{ value }}</li>
+    {% endfor %}
+    </ul>
+</div>
+{% endmacro %}
+
+{% macro render_states(states_data) %}
+    <div class="states-container">
+        {% for key, value in states_data.items() %}
+            <div class="one-stat">
+                <h3 class="stat-title">{{ value }}</h3>
+                <div class="stat-cell">
+                    <div class="stat-value"></div>
+                </div>
+                <div class="stat-peak-counter-container">
+                    {% for _ in range(5) %}
+                        <div class="stat-peak"></div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+
+    </div>
+{% endmacro %}
