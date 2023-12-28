@@ -1,0 +1,13 @@
+{% macro maybe_multiline(text) %}
+{% if text is string %}
+    <p>{{ text }}</p>
+{% elif text is iterable and (text is not string and text is not mapping) %}
+    <div class="multiline">
+        {% for line in text %}
+            <p>{{  line }}</p>
+        {% endfor %}
+    </div>
+{% else %}
+    <p>#ERROR#</p>
+{% endif %}
+{% endmacro %}

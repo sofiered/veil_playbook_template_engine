@@ -1,0 +1,32 @@
+{% from "base.jinja2" import maybe_multiline %}
+<html>
+<head>
+    <title>{{ name }}</title>
+    <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div class="main">
+        <div class="left-column">
+            <div class="portrait" style="background-image: url({{url_for('static', path='/images/' ~ id ~'.png')}})"></div>
+            <div class="description"><span>{{ name }}</span> {{ description }}</div>
+        </div>
+        <div class="right-column">
+            <h1 class="main_title">{{ name }}</h1>
+            <h2 class="subtitle">{{ name_attr }}</h2>
+            <h2 class="subtitle">{{ look_attr }}</h2>
+            <p class="subtitle">{{ look_choose_one }}</p>
+            <div class="look">
+                <ul>
+                {% for key, value in look_items.items() %}
+                    <li><span>{{ key }} :</span> {{ value }}</li>
+                {% endfor %}
+                </ul>
+            </div>
+            <h2 class="subtitle">{{ jam }}</h2>
+            <p>{{ jam_description }}</p>
+            <h2 class="subtitle">{{ states_attr }}</h2>
+            <p>{{ maybe_multiline(states_description) }}</p>
+        </div>
+    </div>
+</body>
+</html>
