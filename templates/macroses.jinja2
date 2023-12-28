@@ -1,6 +1,6 @@
 {% macro maybe_multiline(text) %}
 {% if text is string %}
-    <p>{{ text }}</p>
+    <p class="multiline-single">{{ text }}</p>
 {% elif text is iterable and (text is not string and text is not mapping) %}
     <div class="multiline">
         {% for line in text %}
@@ -76,4 +76,18 @@
             </div>
         {% endfor %}
     </div>
+{% endmacro %}
+
+{% macro render_first_page_left_columns_blocks(blocks) %}
+{% for left_column_block in blocks %}
+    {% if left_column_block['type'] == 'holds' %}
+        <div class="first-page-bordered-block">
+            {% for hold in left_column_block['values'] %}
+                <p>{{ hold }}:</p>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p> #ERROR#</p>
+    {% endif %}
+{% endfor %}
 {% endmacro %}

@@ -12,7 +12,7 @@ h1.main_title {
     text-transform: uppercase;
     font-weight: bold;
     margin: 0;
-    margin-bottom: 70px;
+    /*margin-bottom: 0px;*/
 }
 
 h2.subtitle{
@@ -21,9 +21,11 @@ h2.subtitle{
     font-weight: bold;
     width: 100%;
     border-bottom: solid #d22027 2px;
+    margin-bottom: 5px;
 }
 p.subtitle {
     color: #d22027;
+    margin:0;
 }
 div.description {
     color: #d22027;
@@ -34,6 +36,9 @@ div.description span {
 }
 div.multiline p {
     margin: 0;
+}
+p.multiline-single {
+    margin:0;
 }
 p.belief-description {
     border-bottom: 2px dotted black;
@@ -50,3 +55,14 @@ div.xp-mark{
     margin: auto 0.5%;
 }
 
+div.first-page-bordered-block {
+    border: 2px solid #d22027;
+    margin: 10px 0;
+    min-height: 50px;
+}
+
+div.first-page-bordered-block p{
+    text-transform: uppercase;
+    font-weight: bold;
+    margin:0;
+}

@@ -1,6 +1,6 @@
 .main {
     margin: 0 auto;
-    width: 1200px;
+    width: 1000px;
     display: flex;
     flex-direction:column;
 }

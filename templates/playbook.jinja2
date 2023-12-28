@@ -3,6 +3,7 @@
         <div class="left-column">
             <div class="portrait title-border-color" style="background-image: url({{url_for('data', path='/images/' ~ id ~'.png')}})"></div>
             <div class="description"><span>{{ name }}</span> {{ description }}</div>
+            {{ render_first_page_left_columns_blocks(first_page_left_column) }}
         </div>
         <div class="right-column">
             <h1 class="main_title title-color">{{ name }}</h1>
@@ -11,12 +12,12 @@
             <p class="subtitle">{{ look_choose_one }}</p>
             {{ playbook_style(look_items) }}
             <h2 class="subtitle">{{ jam_attr }}</h2>
-            <p>{{ jam }}</p>
+            {{ maybe_multiline(jam) }}
             <h2 class="subtitle">{{ states_attr }}</h2>
             {{ render_states(states) }}
-            <p>{{ maybe_multiline(states_description) }}</p>
+            {{ maybe_multiline(states_description) }}
             <h2 class="subtitle"> {{ beliefs_attr }}</h2>
-            <p>{{ maybe_multiline(beliefs) }}</p>
+            {{ maybe_multiline(beliefs) }}
             {% for index in range(3) %}
                 <p class="belief-description"> {{ index +1 }}.</p>
             {% endfor %}
