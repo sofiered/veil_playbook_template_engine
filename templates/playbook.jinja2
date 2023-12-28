@@ -4,6 +4,7 @@
             <div class="portrait title-border-color" style="background-image: url({{url_for('data', path='/images/' ~ id ~'.png')}})"></div>
             <div class="description"><span>{{ name }}</span> {{ description }}</div>
             {{ render_first_page_left_columns_blocks(first_page_left_column) }}
+            {{ render_harm(harm) }}
         </div>
         <div class="right-column">
             <h1 class="main_title title-color">{{ name }}</h1>

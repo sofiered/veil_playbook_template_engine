@@ -91,3 +91,31 @@
     {% endif %}
 {% endfor %}
 {% endmacro %}
+
+{% macro render_harm(harm_data) %}
+<div class="harm-section">
+    <p class="title"> {{ harm_data['title'] }}</p>
+    {% for line in harm_data['values'] %}
+        <div class="harm-line">
+         {% for line_item in line %}
+             {% if line_item['type'] == 'harm' %}
+                 {% for _ in range(line_item['value']) %}
+                    <div class="harm-cell"></div>
+                 {% endfor %}
+                <div class="harm-line-description harm-line-description-justify">{{ line_item['name'] }}</div>
+             {% elif line_item['type'] == 'armor' %}
+                 {% for _ in range(line_item['value']) %}
+                    <div class="armor-cell"></div>
+                 {% endfor %}
+                <div class="harm-line-description">{{ line_item['name'] }}</div>
+             {% else %}
+                 <p>#ERROR#</p>
+             {% endif %}
+         {% endfor %}
+        </div>
+    {% endfor %}
+    {% for index in range(harm_data['empty_strings']) %}
+        <p class="empty-string"></p>
+    {% endfor %}
+</div>
+{% endmacro %}
