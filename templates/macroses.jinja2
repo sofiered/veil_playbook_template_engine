@@ -146,11 +146,41 @@
 {% endmacro %}
 
 {% macro render_multielement_move(move_data) %}
-    <div class="second-page-move options-move">
-        <div class="move-title"> {{ move_data['title'] }}</div>
+    <div class="second-page-move multielement-move">
+        {% if 'title' in move_data %}
+            <div class="move-title"> {{ move_data['title'] }}</div>
+        {% endif %}
         {% for element in move_data['elements'] %}
             {% if element['type'] == 'text' %}
-                <div class="move-multielement-text"> {{ element['value'] }}</div>
+                {% if element['value'] is string %}
+                    <div class="move-multielement-text">
+                        {% if 'subtitle' in element %}
+                            <div class="inline-subtitle">
+                                {% if 'optional' in element %}
+                                    <div class="optional-move"></div>
+                                {% endif %}
+                                {{ element['subtitle'] }}:
+                            </div>
+                        {% endif %}
+                        {{ element['value'] }}
+                    </div>
+                {% elif element['value'] is iterable
+                and (element['value'] is not string
+                and element['value'] is not mapping) %}
+                    {% for single_line in element['value'] %}
+                        <div class="move-multielement-text">
+                        {% if loop.first and 'subtitle' in element %}
+                            <div class="inline-subtitle">
+                                {% if 'optional' in element %}
+                                    <div class="optional-move"></div>
+                                {% endif %}
+                                {{ element['subtitle'] }}:
+                            </div>
+                        {% endif %}
+                            {{ single_line }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
             {% elif element['type'] == 'list' %}
                 <ul class="move-multielement-list">
                     {% for list_item in element['value'] %}

@@ -170,6 +170,7 @@ div.single-option-marker {
 
 ul.move-multielement-list {
     margin: 0;
+    padding-left: 15px;
 }
 
 div.move-multielement-fillable-line {
@@ -189,4 +190,22 @@ div.move-multielement-horizontal-list-section div.item {
     font-style: italic;
     font-weight: bold;
 
+}
+
+div.inline-subtitle{
+    display: inline-block;
+    color: #d22027;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+div.optional-move{
+    border: 2px solid #d22027;
+    aspect-ratio: 1/1;
+    height: 8px;
+    display: inline-block;
+}
+
+div.second-page-move{
+    margin-top: 15px;
 }
