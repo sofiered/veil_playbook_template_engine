@@ -1,0 +1,45 @@
+{% extends "base.jinja2" %}
+{% block first_page %}
+        <div class="left-column">
+            <div class="portrait title-border-color" style="background-image: url({{url_for('data', path='/images/' ~ id ~'.png')}})"></div>
+            <div class="description"><span>{{ name }}</span> {{ description }}</div>
+            {{ render_first_page_left_columns_blocks(first_page_left_column) }}
+            {{ render_harm(harm) }}
+        </div>
+        <div class="right-column">
+            <h1 class="main_title title-color">{{ name }}</h1>
+            <h2 class="subtitle">{{ name_attr }}</h2>
+            <h2 class="subtitle">{{ look_attr }}</h2>
+            <p class="subtitle">{{ look_choose_one }}</p>
+            {{ playbook_style(look_items) }}
+            <h2 class="subtitle">{{ jam_attr }}</h2>
+            {{ maybe_multiline(jam) }}
+            <h2 class="subtitle">{{ states_attr }}</h2>
+            {{ render_states(states) }}
+            {{ maybe_multiline(states_description) }}
+            <h2 class="subtitle"> {{ beliefs_attr }}</h2>
+            {{ maybe_multiline(beliefs) }}
+            {% for index in range(1, beliefs_counter + 1) %}
+                <p class="belief-description"> {{ index }}.</p>
+            {% endfor %}
+            <div class="improvement-title-section">
+                <h2 class="subtitle"> {{ improvement_attr }}</h2>
+                <h2 class="subtitle flex-title"> {{ xp_attr }}</h2>
+                    {% for index in range(5) %}
+                        <div class="xp-mark"></div>
+                    {% endfor %}
+            </div>
+            <div class="improvement-first">
+                {{  improve_stats(states) }}
+                {{ improve_base(base_improvements) }}
+                <p>{{ improvement_separator }}</p>
+                {{ improve_after_5(improvements_after_5) }}
+            </div>
+        </div>
+
+{%  endblock %}
+{% block second_page %}
+<div class="moves"> {{ second_page_column(second_page['left']) }}</div>
+<div class="moves"> {{ second_page_column(second_page['middle']) }}</div>
+<div class="moves"> {{ second_page_column(second_page['right']) }}</div>
+{%  endblock %}

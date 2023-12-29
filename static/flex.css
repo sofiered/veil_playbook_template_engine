@@ -1,0 +1,98 @@
+.main {
+    margin: 0 auto;
+    width: 1000px;
+    display: flex;
+    flex-direction:column;
+}
+.page {
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.left-column {
+    width: 33%;
+}
+.right-column {
+    width: 66%;
+}
+.moves {
+    width: 33%;
+}
+
+div.improvement-title-section{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+div.improvement-title-section h2.subtitle {
+    margin-top: 5px;
+}
+div.marks-container {
+    flex: 1;
+}
+
+div.states-improvement-section{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+div.states-improvement-section div.item{
+    width: 33%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+div.states-improvement-section div.item p{
+    margin: 0 5px;
+}
+
+div.states-improvement-section div.item div.improvement-mark{
+  border: 2px solid black;
+    aspect-ratio: 1/1;
+    height: 10px;
+}
+div.states-improvement-section-column{
+    display: flex;
+    flex-direction: column;
+}
+div.improvement-first p{
+    margin-bottom: 0;
+}
+div.states-improvement-section-column div.item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 5px 0;
+}
+div.states-improvement-section-column div.item div.improvement-mark{
+  border: 2px solid black;
+    aspect-ratio: 1/1;
+    width: 10px;
+    margin: 0 2px;
+}
+div.states-improvement-section-column div.item p{
+    margin: 0;
+}
+
+div.states-improvement-after-5-section{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+div.states-improvement-after-5-section div.item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 5px;
+}
+div.states-improvement-after-5-section div.item p {
+    margin: 0;
+}
+div.states-improvement-after-5-section div.item div.improvement-mark{
+  border: 2px solid black;
+    aspect-ratio: 1/1;
+    width: 10px;
+    margin: 0 3px;
+}

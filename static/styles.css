@@ -1,0 +1,211 @@
+div.portrait {
+    height: 700px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-color: #d22027;
+    border-width: 10px;
+    border-style: solid;
+}
+
+h1.main_title {
+    color: #d22027;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 0;
+    /*margin-bottom: 0px;*/
+}
+
+h2.subtitle {
+    color: #d22027;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 100%;
+    border-bottom: solid #d22027 2px;
+    margin-bottom: 5px;
+}
+
+p.subtitle {
+    color: #d22027;
+    margin: 0;
+}
+
+div.description {
+    color: #d22027;
+}
+
+div.description span {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+div.look ul {
+    margin: 0;
+}
+
+div.look li div {
+    display: flex;
+    flex-direction: row;
+}
+
+div.look li div p {
+    margin: 0;
+}
+
+div.look li div p.look-type {
+    width: 80px;
+}
+
+div.look li div p.look-value {
+    flex: 1;
+}
+
+div.multiline p {
+    margin: 0;
+}
+
+p.multiline-single {
+    margin: 0;
+}
+
+p.belief-description {
+    border-bottom: 2px dotted black;
+}
+
+h2.flex-title {
+    flex: 1;
+}
+
+div.xp-mark {
+    border: 2px solid #d22027;
+    aspect-ratio: 1/1;
+    height: 5%;
+    width: 5%;
+    margin: auto 0.5%;
+}
+
+div.first-page-bordered-block {
+    border: 2px solid #d22027;
+    margin: 10px 0;
+    min-height: 50px;
+}
+
+div.first-page-bordered-block p {
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 0;
+}
+
+div.harm-section {
+    border: 2px solid #d22027;
+    margin: 10px 0;
+    min-height: 50px;
+}
+
+div.harm-section p.title {
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 0;
+}
+
+div.harm-section p.empty-string {
+    border-bottom: 1px dotted black;
+}
+
+div.harm-section div.harm-line {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 5px;
+}
+
+div.harm-section div.harm-cell {
+    aspect-ratio: 1/1;
+    border: 1px solid black;
+    width: 10px;
+}
+
+div.harm-section div.armor-cell {
+    aspect-ratio: 1/1;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 10px;
+    margin: 0 1px;
+}
+
+div.harm-section div.harm-line-description {
+    margin: 0 5px;
+}
+
+div.harm-line-description-justify {
+    flex: 1;
+}
+
+@media print {
+    div.printer-page-break {
+        clear: both;
+        page-break-after: always;
+    }
+}
+
+div.moves div.second-page-move div.move-title {
+    color: #d22027;
+    text-transform: uppercase;
+    border-bottom: 2px solid #d22027;
+    font-weight: bold;
+    font-size: 120%;
+}
+
+div.options-move-single-option {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+div.single-option-marker {
+    border: 1px solid black;
+    aspect-ratio: 1/1;
+    height: 7px;
+    margin: 0 5px;
+}
+
+ul.move-multielement-list {
+    margin: 0;
+    padding-left: 15px;
+}
+
+div.move-multielement-fillable-line {
+    border-bottom: 1px dotted black;
+    min-height: 1.5em;
+}
+
+div.move-multielement-horizontal-list-section {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+
+div.move-multielement-horizontal-list-section div.item {
+    margin-right: 20px;
+    font-style: italic;
+    font-weight: bold;
+
+}
+
+div.inline-subtitle{
+    display: inline-block;
+    color: #d22027;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+div.optional-move{
+    border: 2px solid #d22027;
+    aspect-ratio: 1/1;
+    height: 8px;
+    display: inline-block;
+}
+
+div.second-page-move{
+    margin-top: 15px;
+}
