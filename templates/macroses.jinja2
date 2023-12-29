@@ -161,6 +161,14 @@
                 {% for fillable_line in element['value'] %}
                     <div class="move-multielement-fillable-line">{{ fillable_line }}</div>
                 {% endfor %}
+            {% elif element['type'] == 'horizontal-list' %}
+                <div class="move-multielement-horizontal-list-section">
+                    {% for list_item in element['value'] %}
+                        <div class="item">
+                            {{ list_item }}
+                        </div>
+                    {% endfor %}
+                </div>
             {% endif %}
         {% endfor %}
     </div>
