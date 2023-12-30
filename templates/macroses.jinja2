@@ -134,8 +134,18 @@
 
 {% macro render_options_move(move_data) %}
     <div class="second-page-move options-move">
-        <div class="move-title"> {{ move_data['title'] }}</div>
-        <div class="options-move-description">{{ move_data['text'] }}</div>
+        {% if 'title' in move_data %}
+            <div class="move-title"> {{ move_data['title'] }}</div>
+        {% endif %}
+        {% if move_data['text'] is string %}
+            <div class="options-move-description">{{ move_data['text'] }}</div>
+        {% elif move_data['text'] is iterable and (move_data['text'] is not string and move_data['text'] is not mapping) %}
+            {% for text_line in move_data['text'] %}
+                <div class="options-move-description">{{ text_line }}</div>
+            {% endfor %}
+        {% else %}
+            <p>#ERROR!#</p>
+        {% endif %}
         {% for single_option in move_data['options'] %}
             <div class="options-move-single-option">
                 <div class="single-option-marker"> </div>

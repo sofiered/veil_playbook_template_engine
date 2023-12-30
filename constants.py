@@ -1,1 +1,1 @@
-playbook_names = ('apparatus', 'architect')
+playbook_names = ('apparatus', 'architect', 'attached', 'catabolist')
