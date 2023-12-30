@@ -72,7 +72,7 @@ div.states-improvement-section-column div.item div.improvement-mark{
     margin: 0 2px;
 }
 div.states-improvement-section-column div.item p{
-    margin: 0;
+    margin: 0 5px;
 }
 
 div.states-improvement-after-5-section{
@@ -88,7 +88,7 @@ div.states-improvement-after-5-section div.item {
     margin: 5px;
 }
 div.states-improvement-after-5-section div.item p {
-    margin: 0;
+    margin: 0 5px;
 }
 div.states-improvement-after-5-section div.item div.improvement-mark{
   border: 2px solid black;
