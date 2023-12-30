@@ -1,7 +1,10 @@
 {% extends "base.jinja2" %}
 {% block first_page %}
         <div class="left-column">
-            <div class="portrait title-border-color" style="background-image: url({{url_for('data', path='/images/' ~ id ~'.png')}})"></div>
+            <div class="portrait-container">
+{#                <div class="portrait" style="background-image: url({{url_for('data', path='/images/' ~ id ~'.png')}})"></div>#}
+                <img class="portrait" src={{url_for('data', path='/images/' ~ id ~'.png')}} />
+            </div>
             <div class="description"><span>{{ name }}</span> {{ description }}</div>
             {{ render_first_page_left_columns_blocks(first_page_left_column) }}
             {{ render_harm(harm) }}
