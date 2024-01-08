@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title>{{ name }}</title>
+    <link href="{{ url_for('static', path='/flex.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div class="playbooks-list-main-container">
+        {% for name, value in data.items() %}
+        <div class="playbook-list-item">
+            <div class="playbook-list-portrait" style="background-image: url({{url_for('data', path='/images/' ~ name ~'.png')}})">
+                <a href="{{ root }}/playbooks/{{ name }}/">
+                    <div class="playbook-list-item-description">
+                        <p class="playbook-list-name">{{ value['name'] }}</p>
+                        <p class="playbook-list-description">{{ value['short_description'] }} {{ root }}</p>
+                    </div>
+                </a>
+
+            </div>
+
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

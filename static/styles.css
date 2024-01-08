@@ -214,3 +214,63 @@ div.optional-move{
 div.second-page-move{
     margin-top: 15px;
 }
+div.centered-link {
+    display: flex;
+}
+div.centered-link a{
+    margin: 3px auto;
+    text-decoration: none;
+    color: #d22027;
+    border: 1px dashed #d22027;
+    display: inline-block;
+    padding: 2px;
+
+}
+@media print {
+    div.no-print {
+        display: none!important;
+    }
+
+}
+
+
+div.playbooks-list-main-container{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    flex-wrap: wrap;
+    width: 1000px;
+    margin: auto;
+}
+div.playbook-list-item{
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+div.playbook-list-portrait{
+    height: 200px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    position: relative;
+}
+div.playbook-list-item-description{
+    width: 100%;
+    text-transform: uppercase;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    font-weight: bold;
+    background: linear-gradient(65deg, #b52919, #e77878);
+    clip-path: polygon(0 0, 100% 0%, 81% 0, 100% 100%, 0 100%);
+}
+div.playbook-list-item-description p{
+    margin: 0;
+}
+div.playbook-list-item-description p.playbook-list-description{
+    text-transform: none;
+    font-size: 80%;
+}
