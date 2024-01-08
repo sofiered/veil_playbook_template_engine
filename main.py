@@ -1,12 +1,10 @@
-import json
-
 from fastapi import FastAPI, Request, HTTPException
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
 import constants
-from context import get_playbook_context
+from context import get_playbook_context, get_main_page_context
 from settings import settings
 app = FastAPI()
 
@@ -14,6 +12,15 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 app.mount("/data", StaticFiles(directory=settings.data_path), name="data")
 
 templates = Jinja2Templates(directory="templates")
+
+
+@app.get("/playbooks/")
+async def read_items_list(request: Request, response_class=HTMLResponse):
+    return templates.TemplateResponse(
+        request=request,
+        name="playbooks_list.jinja2",
+        context=get_main_page_context()
+    )
 
 
 @app.get("/playbooks/{playbook_name}", response_class=HTMLResponse)
