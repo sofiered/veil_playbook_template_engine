@@ -6,7 +6,7 @@ from fastapi.templating import Jinja2Templates
 import constants
 from context import get_playbook_context, get_main_page_context
 from settings import settings
-app = FastAPI()
+app = FastAPI(root_path=settings.root)
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
 app.mount("/data", StaticFiles(directory=settings.data_path), name="data")
@@ -14,7 +14,7 @@ app.mount("/data", StaticFiles(directory=settings.data_path), name="data")
 templates = Jinja2Templates(directory="templates")
 
 
-@app.get("/playbooks/")
+@app.get("/playbooks/", name='playbooks')
 async def read_items_list(request: Request, response_class=HTMLResponse):
     return templates.TemplateResponse(
         request=request,
@@ -23,7 +23,7 @@ async def read_items_list(request: Request, response_class=HTMLResponse):
     )
 
 
-@app.get("/playbooks/{playbook_name}", response_class=HTMLResponse)
+@app.get("/playbooks/{playbook_name}/", name='get_playbook', response_class=HTMLResponse)
 async def read_item(request: Request, playbook_name: str):
     if playbook_name in constants.playbook_names:
         return templates.TemplateResponse(
