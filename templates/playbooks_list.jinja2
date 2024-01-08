@@ -8,15 +8,14 @@
     <div class="playbooks-list-main-container">
         {% for name, value in data.items() %}
         <div class="playbook-list-item">
+        <a href="{{ url_for('get_playbook', playbook_name=name) }}">
             <div class="playbook-list-portrait" style="background-image: url({{url_for('data', path='/images/' ~ name ~'.png')}})">
-                <a href="{{ url_for('get_playbook', playbook_name=name) }}">
                     <div class="playbook-list-item-description">
                         <p class="playbook-list-name">{{ value['name'] }}</p>
                         <p class="playbook-list-description">{{ value['short_description'] }}</p>
                     </div>
-                </a>
-
             </div>
+        </a>
 
         </div>
         {% endfor %}
