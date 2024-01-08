@@ -33,7 +33,7 @@ def get_playbook_context(playbook_name: str) -> Dict[str, Any]:
     base_context = __get_json_content(base_path)
     playbook_context = __get_json_content(playbook_path)
 
-    return {**base_context, **playbook_context, 'root': settings.root}
+    return {**base_context, **playbook_context}
 
 @cache
 def _get_main_page_context(_ttl_hash: int) -> Dict[str, Dict]:
@@ -45,7 +45,7 @@ def _get_main_page_context(_ttl_hash: int) -> Dict[str, Dict]:
             'short_description': playbook_data.get('short_description', constants.no_desciption),
 
         }
-    return {"data": result, "root": settings.root}
+    return {"data": result}
 
 def get_main_page_context() -> Dict[str, Dict]:
     return _get_main_page_context(_ttl_hash=settings.main_page_cache_ttl)
