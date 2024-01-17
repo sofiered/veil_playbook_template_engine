@@ -274,3 +274,13 @@ div.playbook-list-item-description p.playbook-list-description{
     text-transform: none;
     font-size: 80%;
 }
+
+div.license-text {
+    margin-top: 10px;
+}
+
+div.license-text p {
+    font-size: 75%;
+    text-align: center;
+    margin: 0;
+}

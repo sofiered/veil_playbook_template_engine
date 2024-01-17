@@ -31,9 +31,13 @@ def get_playbook_context(playbook_name: str) -> Dict[str, Any]:
     playbook_path = __get_playbook_path(playbook_name)
 
     base_context = __get_json_content(base_path)
+    base_context['license'] = constants.original_license
     playbook_context = __get_json_content(playbook_path)
 
-    return {**base_context, **playbook_context}
+    return {
+        **base_context,
+        **playbook_context,
+    }
 
 @cache
 def _get_main_page_context(_ttl_hash: int) -> Dict[str, Dict]:
@@ -43,7 +47,6 @@ def _get_main_page_context(_ttl_hash: int) -> Dict[str, Dict]:
         result[playbook_data['id']] = {
             'name': playbook_data.get('name'),
             'short_description': playbook_data.get('short_description', constants.no_desciption),
-
         }
     return {"data": result}
 
