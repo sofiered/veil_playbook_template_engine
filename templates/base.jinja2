@@ -17,6 +17,11 @@
     <div class="page">
         {% block second_page %} {% endblock %}
     </div>
+    <div class="license-text no-print">
+        {% for line in license %}
+            <p>{{ line }}</p>
+        {% endfor %}
+    </div>
 </div>
 </body>
 </html>
