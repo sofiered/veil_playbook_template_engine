@@ -1,10 +1,10 @@
 services:
   templater:
     build: .
-    entrypoint: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "${port}", "--proxy-headers"]
+    entrypoint: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--proxy-headers"]
     env_file:
       - .env
     ports:
-      - 8000:8000
+      - 8000:${port}
     volumes:
       - ${data_path}:/app/data
