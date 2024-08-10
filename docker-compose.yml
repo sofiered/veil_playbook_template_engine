@@ -5,6 +5,6 @@ services:
     env_file:
       - .env
     ports:
-      - 8000:${port}
+      - ${port}:8000
     volumes:
       - ${data_path}:/app/data
