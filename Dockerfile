@@ -12,8 +12,3 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Копируем все файлы приложения в контейнер
 COPY . /app
-
-
-
-# Открываем порт для доступа к приложению
-EXPOSE 8000
