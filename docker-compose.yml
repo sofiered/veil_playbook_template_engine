@@ -1,7 +1,7 @@
 services:
   templater:
     build: .
-    entrypoint: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "${port}", "--proxy-headers"]
+    entrypoint: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "${port}", "--proxy-headers", "--forwarded-allow-ips", "*"]
     ports:
       - ${port}:${port}
     env_file:

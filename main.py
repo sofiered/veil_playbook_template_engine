@@ -31,9 +31,3 @@ async def read_item(request: Request, playbook_name: str):
         )
     else:
         raise HTTPException(status_code=404, detail="Playbook not found")
-
-
-@app.get("/headers")
-async def get_headers(request: Request) -> dict[str, str]:
-    headers = {key: value for key, value in request.headers.items()}
-    return headers
