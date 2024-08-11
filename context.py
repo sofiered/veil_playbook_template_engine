@@ -8,13 +8,6 @@ from typing import Any, Dict
 
 from settings import settings
 
-def __get_file_path(filepath: str) -> FilePath:
-    return FilePath(f'{settings.data_path}/{filepath}')
-
-
-def __get_playbook_path(playbook_name: str) -> FilePath:
-    playbook_path = f"playbooks/{playbook_name}.json"
-    return FilePath(__get_file_path(playbook_path))
 
 def __get_json_content(filepath: FilePath) -> Dict[str, Any]:
     if not filepath.is_file():
@@ -27,8 +20,8 @@ def __get_json_content(filepath: FilePath) -> Dict[str, Any]:
 
 
 def get_playbook_context(playbook_name: str) -> Dict[str, Any]:
-    base_path = __get_file_path(f'{settings.base_json_name}')
-    playbook_path = __get_playbook_path(playbook_name)
+    base_path = FilePath(f'data/{settings.base_json_name}')
+    playbook_path = FilePath(f"data/playbooks/{playbook_name}.json")
 
     base_context = __get_json_content(base_path)
     base_context['license'] = constants.original_license
@@ -38,6 +31,7 @@ def get_playbook_context(playbook_name: str) -> Dict[str, Any]:
         **base_context,
         **playbook_context,
     }
+
 
 @cache
 def _get_main_page_context(_ttl_hash: int) -> Dict[str, Dict]:
@@ -49,6 +43,7 @@ def _get_main_page_context(_ttl_hash: int) -> Dict[str, Dict]:
             'short_description': playbook_data.get('short_description', constants.no_desciption),
         }
     return {"data": result}
+
 
 def get_main_page_context() -> Dict[str, Dict]:
     return _get_main_page_context(_ttl_hash=settings.main_page_cache_ttl)

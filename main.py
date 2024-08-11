@@ -9,7 +9,7 @@ from settings import settings
 app = FastAPI(root_path=settings.root)
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
-app.mount("/data", StaticFiles(directory=settings.data_path), name="data")
+app.mount("/data", StaticFiles(directory="data"), name="data")
 
 templates = Jinja2Templates(directory="templates")
 
