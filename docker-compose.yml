@@ -8,3 +8,4 @@ services:
       - .env
     volumes:
       - ${data_path}:/app/data
+    restart: unless-stopped
