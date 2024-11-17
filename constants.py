@@ -1,4 +1,4 @@
-playbook_names = ('apparatus', 'architect', 'attached', 'catabolist', 'dying', 'empath', 'executive')
+playbook_names = ('apparatus', 'architect', 'attached', 'catabolist', 'dying', 'empath', 'executive', 'honed')
 no_desciption = 'Описание отсутствует'
 original_license = [
     'Оригинальное произведение "The Veil" авторства  Fraser Simons лицензировано по Creative Commons Share-alike 3.0 Unported (CC BY-SA 3.0).',
