@@ -12,7 +12,7 @@ from settings import settings
 def __get_json_content(filepath: FilePath) -> Dict[str, Any]:
     if not filepath.is_file():
         return {}
-    with open(filepath, "r") as file:
+    with open(filepath, "r", encoding='utf-8') as file:
         try:
             return json.load(file)
         except Exception:
